@@ -1074,7 +1074,7 @@ class MetadataOverlayGenerator {
             return null;
         }
         
-        progressCallback?.(language === 'zh' ? `生成 ${uniqueStates.size} 个元数据覆盖层...` : `Generating ${uniqueStates.size} metadata overlays...`);
+        progressCallback?.(`Generating ${uniqueStates.size} metadata overlays...`);
         
         // Create directory for PNGs
         await fs.mkdir(pngDir, { recursive: true });
@@ -1099,7 +1099,7 @@ class MetadataOverlayGenerator {
                 idx++;
                 
                 if (idx % 20 === 0) {
-                    progressCallback?.(language === 'zh' ? `生成覆盖层 ${idx}/${uniqueStates.size}...` : `Generating overlay ${idx}/${uniqueStates.size}...`);
+                    progressCallback?.(`Generating overlay ${idx}/${uniqueStates.size}...`);
                     // Short sleep to yield main thread
                     await new Promise(r => setTimeout(r, 0));
                 }
@@ -2096,32 +2096,32 @@ class MetadataManager {
         
         // Brake
         s.brake.textContent = d.brakeApplied 
-            ? (lang === 'zh' ? '踩下' : 'Applied') 
-            : (lang === 'zh' ? '未踩' : 'Released');
+            ? (lang === 'es' ? 'Aplicado' : lang === 'zh' ? '踩下' : 'Applied') 
+            : (lang === 'es' ? 'Suelto' : lang === 'zh' ? '未踩' : 'Released');
         s.brake.className = 'stats-value' + (d.brakeApplied ? ' highlight-red' : '');
         
         // Blinker
         const blinkerLeft = d.blinkerOnLeft || false;
         const blinkerRight = d.blinkerOnRight || false;
         if (blinkerLeft && blinkerRight) {
-            s.blinker.textContent = lang === 'zh' ? '双闪' : 'Hazard';
+            s.blinker.textContent = lang === 'es' ? 'Emergencia' : lang === 'zh' ? '双闪' : 'Hazard';
             s.blinker.className = 'stats-value highlight-yellow';
         } else if (blinkerLeft) {
-            s.blinker.textContent = lang === 'zh' ? '← 左转' : '← Left';
+            s.blinker.textContent = lang === 'es' ? '← Izq' : lang === 'zh' ? '← 左转' : '← Left';
             s.blinker.className = 'stats-value highlight-green';
         } else if (blinkerRight) {
-            s.blinker.textContent = lang === 'zh' ? '右转 →' : 'Right →';
+            s.blinker.textContent = lang === 'es' ? 'Der →' : lang === 'zh' ? '右转 →' : 'Right →';
             s.blinker.className = 'stats-value highlight-green';
         } else {
-            s.blinker.textContent = lang === 'zh' ? '关' : 'Off';
+            s.blinker.textContent = lang === 'es' ? 'Apagado' : lang === 'zh' ? '关' : 'Off';
             s.blinker.className = 'stats-value';
         }
         
         // Autopilot
         const apMap = {
-            'NONE': lang === 'zh' ? '无' : 'None',
+            'NONE': lang === 'es' ? 'Ninguno' : lang === 'zh' ? '无' : 'None',
             'SELF_DRIVING': 'FSD',
-            'AUTOSTEER': lang === 'zh' ? '自动转向' : 'Autosteer',
+            'AUTOSTEER': lang === 'es' ? 'Autogiro' : lang === 'zh' ? '自动转向' : 'Autosteer',
             'TACC': 'TACC'
         };
         s.autopilot.textContent = apMap[d.autopilotState] || d.autopilotState || '--';
@@ -4238,11 +4238,11 @@ class VideoClipProcessor {
     // Fix WebM metadata using FFmpeg WASM (for streamed files)
     async fixWebmWithFFmpeg(fileHandle, progressCallback) {
         try {
-            progressCallback?.(this.currentLanguage === 'zh' ? '加载 FFmpeg 修复模块...' : 'Loading FFmpeg repair module...');
+            progressCallback?.(this.currentLanguage === 'es' ? 'Cargando módulo de reparación FFmpeg...' : this.currentLanguage === 'zh' ? '加载 FFmpeg 修复模块...' : 'Loading FFmpeg repair module...');
             const ffmpeg = await this.loadFFmpeg(progressCallback);
             
             // Read the file content
-            progressCallback?.(this.currentLanguage === 'zh' ? '读取视频文件...' : 'Reading video file...');
+            progressCallback?.(this.currentLanguage === 'es' ? 'Leyendo archivo de video...' : this.currentLanguage === 'zh' ? '读取视频文件...' : 'Reading video file...');
             const file = await fileHandle.getFile();
             const inputData = new Uint8Array(await file.arrayBuffer());
             
@@ -4250,7 +4250,7 @@ class VideoClipProcessor {
             await ffmpeg.writeFile('input.webm', inputData);
             
             // Run FFmpeg to remux (copy streams, fix metadata)
-            progressCallback?.(this.currentLanguage === 'zh' ? '修复视频元数据...' : 'Repairing video metadata...');
+            progressCallback?.(this.currentLanguage === 'es' ? 'Reparando metadata del video...' : this.currentLanguage === 'zh' ? '修复视频元数据...' : 'Repairing video metadata...');
             await ffmpeg.exec([
                 '-i', 'input.webm',
                 '-c', 'copy',
@@ -4270,7 +4270,7 @@ class VideoClipProcessor {
             }
             
             // Write back to the original file
-            progressCallback?.(this.currentLanguage === 'zh' ? '保存修复后的视频...' : 'Saving repaired video...');
+            progressCallback?.(this.currentLanguage === 'es' ? 'Guardando video reparado...' : this.currentLanguage === 'zh' ? '保存修复后的视频...' : 'Saving repaired video...');
             const writable = await fileHandle.createWritable();
             await writable.write(outputData);
             await writable.close();
@@ -4333,7 +4333,7 @@ class VideoClipProcessor {
             // Load Font if needed (once)
             let fontFile = null;
             if (addTimestamp) {
-                progressCallback?.('加载字体...');
+                progressCallback?.('Loading font...');
                 try {
                      const fontUrl = 'https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxP.ttf';
                      const fontData = await this.fetchFileAsUint8Array(fontUrl);
@@ -4354,7 +4354,7 @@ class VideoClipProcessor {
                 const seg = clipSegments[i];
                 const segmentFiles = []; // Files for this segment only
                 
-                progressCallback?.(`处理片段 ${i + 1}/${clipSegments.length}...`);
+                progressCallback?.(`Processing clip ${i + 1}/${clipSegments.length}...`);
                 
                 const cameraInputs = {};
                 
@@ -4494,7 +4494,7 @@ class VideoClipProcessor {
                 
                 if (writable) {
                      // Streaming write to disk directly
-                     progressCallback?.(`写入磁盘 (段 ${i + 1})...`);
+                     progressCallback?.(`Writing to disk (part ${i + 1})...`);
                      await writable.write(segData);
                 } else {
                      // Convert to Blob immediately
@@ -4522,7 +4522,7 @@ class VideoClipProcessor {
             }
             
             // 3. Concat all segments (Memory Mode Fallback)
-            progressCallback?.('合并片段...');
+            progressCallback?.('Merging clips...');
             
             try {
                 const allTsBlob = new Blob(tsBlobs, { type: 'video/mp2t' });
@@ -4540,7 +4540,7 @@ class VideoClipProcessor {
                 await ffmpeg.writeFile('all.ts', allTsUint8);
                 allCreatedFiles.push('all.ts');
                 
-                progressCallback?.('封装 MP4...');
+                progressCallback?.('Packaging MP4...');
                 const args = [
                     '-i', 'all.ts',
                     '-c', 'copy',
@@ -4644,7 +4644,7 @@ class VideoClipProcessor {
      */
     async executeFFmpegWithProgress(args, totalDuration, progressCallback, progressPrefix) {
         if (!progressPrefix) {
-            progressPrefix = this.currentLanguage === 'zh' ? '编码中...' : 'Encoding...';
+            progressPrefix = this.currentLanguage === 'es' ? 'Codificando...' : this.currentLanguage === 'zh' ? '编码中...' : 'Encoding...';
         }
         const tauri = window.__TAURI__;
         const command = this.createFFmpegCommand(args);
@@ -8693,7 +8693,7 @@ class TeslaCamViewer {
                 return;
             }
             console.error('[selectDirectoryWithFSA] Error:', e);
-            this.showToast('选择目录失败: ' + e.message, 'error');
+            this.showToast((this.currentLanguage === 'es' ? 'Error al elegir ruta: ' : 'Directory select failed: ') + e.message, 'error');
         }
     }
 
@@ -8817,7 +8817,7 @@ class TeslaCamViewer {
             await this.loadTauriDirectory(path);
         } catch (e) {
             console.error('[selectTauriDirectory] Error:', e);
-            this.showToast('选择目录失败: ' + e.message, 'error');
+            this.showToast((this.currentLanguage === 'es' ? 'Error al elegir ruta: ' : 'Directory select failed: ') + e.message, 'error');
         }
     }
 
@@ -9197,11 +9197,11 @@ class TeslaCamViewer {
                     });
                 }
 
-                this.showToast('保存成功!', 'success');
+                this.showToast(this.currentLanguage === 'es' ? '¡Guardado correctamente!' : 'Saved successfully!', 'success');
             } catch (e) {
                 console.error('Tauri download failed:', e);
                 const errorMsg = typeof e === 'string' ? e : (e.message || JSON.stringify(e));
-                alert('保存失败: ' + errorMsg);
+                alert((this.currentLanguage === 'es' ? 'Error al guardar: ' : 'Save failed: ') + errorMsg);
             }
             return;
         }
@@ -9416,7 +9416,7 @@ class TeslaCamViewer {
                     await writable.close();
 
                     console.log('File saved via File System Access API');
-                    this.showToast('视频保存成功!', 'success');
+                    this.showToast(this.currentLanguage === 'es' ? '¡Video guardado con éxito!' : 'Video saved successfully!', 'success');
                 } catch (fsError) {
                     // User cancelled the save dialog or API failed
                     if (fsError.name === 'AbortError') {
@@ -9454,7 +9454,7 @@ class TeslaCamViewer {
             }
         } catch (downloadError) {
             console.error('Download error:', downloadError);
-            alert('下载失败: ' + downloadError.message);
+            alert('Download Failed: ' + downloadError.message);
         }
     }
 
@@ -9622,9 +9622,9 @@ class TeslaCamViewer {
                                 await fs.copyFile(result.path, resolvedSavePath);
                                 // Remove temp file
                                 await fs.remove(result.path);
-                                this.showToast('保存成功!', 'success');
+                                this.showToast(this.currentLanguage === 'es' ? '¡Guardado correctamente!' : 'Saved successfully!', 'success');
                             } else if (resolvedSavePath === result.path) {
-                                this.showToast('保存成功!', 'success');
+                                this.showToast(this.currentLanguage === 'es' ? '¡Guardado correctamente!' : 'Saved successfully!', 'success');
                             } else {
                                 // User cancelled, keep the file in original location
                                 this.showToast(`视频已保存到: ${result.path}`, 'success');
@@ -9640,7 +9640,7 @@ class TeslaCamViewer {
                         
                         if (result.blob.size === 0) {
                             console.error('Invalid blob for camera:', result.camera);
-                            alert('导出失败：生成的视频文件为空');
+                            alert(this.currentLanguage === 'es' ? 'Fallo al exportar: Video generado en blanco' : 'Export failed: Generated video is empty');
                             continue;
                         }
                         
@@ -9665,7 +9665,7 @@ class TeslaCamViewer {
                                 
                                 // Tauri v2 uses writeFile
                                 await fs.writeFile(resolvedSavePath, uint8Array);
-                                this.showToast('保存成功!', 'success');
+                                this.showToast(this.currentLanguage === 'es' ? '¡Guardado correctamente!' : 'Saved successfully!', 'success');
                             }
                         } catch (e) {
                             console.error('Tauri save failed:', e);
@@ -9775,7 +9775,7 @@ class TeslaCamViewer {
             const gcj_lon = gcj02[0];
             const gcj_lat = gcj02[1];
             // Gaode URI API uses lon,lat order and GCJ-02 coordinates
-            url = `https://uri.amap.com/marker?position=${gcj_lon},${gcj_lat}&name=事件位置`;
+            url = `https://www.google.com/maps/search/?api=1&query=${gcj_lat},${gcj_lon}`;
         } else { // google
             url = `https://www.google.com/maps?q=${lat},${lon}`;
         }
