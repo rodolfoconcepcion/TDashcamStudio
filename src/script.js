@@ -4,7 +4,7 @@
         headerTitle: "TDashcam Studio",
         toggleSidebar: "Toggle Sidebar",
         toggleTheme: "Toggle Theme",
-        toggleLanguage: "切换到中文",
+        toggleLanguage: "ES",
         drivingRecords: "Driving Records",
         date: "Date",
         eventType: "Event Type",
@@ -108,12 +108,83 @@
         exportMetadataSuccess: "Metadata exported successfully",
         exportMetadataNoData: "No metadata available to export"
     },
+
+    es: {
+        pageTitle: "TDashcam Studio",
+        headerTitle: "TDashcam Studio",
+        toggleSidebar: "Alternar Barra Lateral",
+        toggleTheme: "Alternar Tema",
+        toggleLanguage: "ES",
+        drivingRecords: "Grabaciones",
+        date: "Fecha",
+        eventType: "Tipo Evento",
+        allTypes: "📂 Todos",
+        recentClips: "🕒 Recientes",
+        savedClips: "💾 Guardados",
+        sentryClips: "🤖 Centinela",
+        noRecordsFound: "No se encontraron eventos",
+        selectFolder: "📁 Seleccionar Carpeta",
+        selectFiles: "📁 Seleccionar Archivos",
+        helpStep1: "Inserta tu USB de Tesla en tu PC",
+        helpStep2: "Selecciona o arrastra el directorio 'TeslaCam'",
+        helpStep1IOS: "Copia los videos de TeslaCam a tu iPad/iPhone",
+        helpStep2IOS: "Selecciona los videos (ej., 2024-01-15_12-30-00-front.mp4)",
+        helpNote: "Nota: Esta herramienta no sube tus datos. Todo es procesado localmente.",
+        desktopTip: "💡 Tip: Debido a límites del navegador web, se recomienda usar la versión Desktop.",
+        desktopDownload: "Descargar Versión de Escritorio",
+        mapModalTitle: "Ver en Mapa",
+        gaodeMap: "Gaode Mapa",
+        googleMap: "Google Maps",
+        revealFile: "Mostrar Ruta",
+        downloadFile: "Descargar",
+        filePathAlertTitle: "Ruta Actual del Video",
+        copiedToClipboard: "Copiado al portapapeles",
+        noFilePath: "No se pudo obtener la ruta del video.",
+        selectDate: "Seleccionar Fecha",
+        minutes: "minutos",
+        preview: "Vista Previa",
+        noSignal: "Sin Señal",
+        front: "Frente",
+        back: "Atrás",
+        left: "Izquierda",
+        right: "Derecha",
+        leftPillar: "Pilar Izq",
+        rightPillar: "Pilar Der",
+        cameraNameFront: "Frontal",
+        cameraNameBack: "Trasera",
+        cameraNameLeft: "Lateral Izquierda",
+        cameraNameRight: "Lateral Derecha",
+        cameraNameLeftPillar: "Pilar Izquierdo",
+        cameraNameRightPillar: "Pilar Derecho",
+        metadata: "Telemetría",
+        metadataDetail: "Datos",
+        exportMetadata: "Exportar CSV",
+        loadingMetadata: "Cargando telemetría...",
+        noMetadata: "Sin telemetría",
+        autopilot: "Autopilot",
+        heading: "Rumbo",
+        acceleration: "Aceleración",
+        exportVideoClip: "Exportar Clip",
+        selectedDuration: "Duración:",
+        startTime: "Inicio:",
+        endTime: "Fin:",
+        selectCameras: "Seleccionar Cámaras:",
+        addTimestampWatermark: "Añadir Marca de Tiempo",
+        addDrivingData: "Añadir Telemetría",
+        mergeMultiCamVideo: "Crear Cuadrícula (4 cams)",
+        useLocalFFmpegLabel: "Usar FFmpeg Rápido",
+        preparing: "Preparando...",
+        startExport: "Exportar",
+        cancel: "Cancelar",
+        confirmClipRange: "Confirmar Clip",
+        clipVideo: "Recortar Video"
+    },
     zh: {
         pageTitle: "TDashcam Studio",
         headerTitle: "TDashcam Studio",
         toggleSidebar: "切换侧边栏",
         toggleTheme: "切换主题",
-        toggleLanguage: "Switch to English",
+        toggleLanguage: "EN",
         drivingRecords: "行车记录",
         date: "日期",
         eventType: "事件类型",
@@ -8431,7 +8502,7 @@ class TeslaCamViewer {
     }
 
     toggleLanguage() {
-        const newLang = this.currentLanguage === 'zh' ? 'en' : 'zh';
+        const newLang = this.currentLanguage === 'en' ? 'es' : this.currentLanguage === 'es' ? 'zh' : 'en';
         this.setLanguage(newLang);
     }
 
@@ -8816,9 +8887,9 @@ class TeslaCamViewer {
         // Update language toggle button text
         const langIconEl = this.dom.langToggleBtn.querySelector('.btn-icon');
         if (langIconEl) {
-            langIconEl.textContent = lang === 'zh' ? 'En' : '中';
+            langIconEl.textContent = lang === 'en' ? 'EN' : lang === 'es' ? 'ES' : '中';
         } else {
-            this.dom.langToggleBtn.textContent = lang === 'zh' ? 'En' : '中';
+            this.dom.langToggleBtn.textContent = lang === 'en' ? 'EN' : lang === 'es' ? 'ES' : '中';
         }
         
         this.dom.langToggleBtn.title = translations.toggleLanguage;
