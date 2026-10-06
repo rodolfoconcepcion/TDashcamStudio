@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">TDashcam Studio</h1>
 
-<p align="center">English | <a href="">简体中文</a></p>
+<p align="center">English | <a href="README_ES.md">Español</a></p>
 
 <p align="center">
   <a href="https://github.com/rodolfoconcepcion/TDashcamStudio/releases"><img src="https://img.shields.io/github/v/release/rodolfoconcepcion/TDashcamStudio?style=flat-square&color=blue" alt="Release"></a>
