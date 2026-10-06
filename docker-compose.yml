@@ -2,15 +2,13 @@ version: '3.8'
 
 services:
   tdashcam-studio:
-    image: dupengcheng66666/tdashcam-studio:latest
+    image: ghcr.io/rodolfoconcepcion/tdashcamstudio:latest
     container_name: tdashcam-studio
     ports:
       - "8188:80"
     restart: unless-stopped
     environment:
-      - TZ=Asia/Shanghai
-      - UMAMI_SCRIPT_URL=${UMAMI_SCRIPT_URL:-}
-      - UMAMI_WEBSITE_ID=${UMAMI_WEBSITE_ID:-}
+      - TZ=America/Santo_Domingo
     networks:
       - tdashcam-network
 
