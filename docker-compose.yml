@@ -1,17 +1,17 @@
 version: '3.8'
 
 services:
-  tdashcam-studio:
+  teslacam-studio:
     image: ghcr.io/rodolfoconcepcion/tdashcamstudio:latest
-    container_name: tdashcam-studio
+    container_name: teslacam-studio
     ports:
       - "8188:80"
     restart: unless-stopped
     environment:
       - TZ=America/Santo_Domingo
     networks:
-      - tdashcam-network
+      - tdascam-network
 
 networks:
-  tdashcam-network:
+  tdascam-network:
     driver: bridge

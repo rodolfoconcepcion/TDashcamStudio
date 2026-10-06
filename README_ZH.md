@@ -6,11 +6,11 @@
 <p align="center"><a href="README.md">English</a> | <a href="README_ES.md">Español</a> | 简体中文</p>
 
 <p align="center">
-  <a href="https://github.com/rodolfoconcepcion/TeslaCamStudio/releases"><img src="https://img.shields.io/github/v/release/rodolfoconcepcion/TeslaCamStudio?style=flat-square&color=blue" alt="Release"></a>
-  <a href="https://github.com/rodolfoconcepcion/TeslaCamStudio/releases"><img src="https://img.shields.io/github/downloads/rodolfoconcepcion/TeslaCamStudio/total?style=flat-square&color=green" alt="Downloads"></a>
-  <a href="https://github.com/rodolfoconcepcion/TeslaCamStudio/blob/main/LICENSE"><img src="https://img.shields.io/github/license/rodolfoconcepcion/TeslaCamStudio?style=flat-square" alt="License"></a>
-  <a href="https://github.com/rodolfoconcepcion/TeslaCamStudio/stargazers"><img src="https://img.shields.io/github/stars/rodolfoconcepcion/TeslaCamStudio?style=flat-square" alt="Stars"></a>
-  <a href="https://github.com/rodolfoconcepcion/TeslaCamStudio/actions/workflows/build.yml"><img src="https://img.shields.io/github/actions/workflow/status/rodolfoconcepcion/TeslaCamStudio/build.yml?style=flat-square&label=CI" alt="CI"></a>
+  <a href="https://github.com/rodolfoconcepcion/TDashcamStudio/releases"><img src="https://img.shields.io/github/v/release/rodolfoconcepcion/TDashcamStudio?style=flat-square&color=blue" alt="Release"></a>
+  <a href="https://github.com/rodolfoconcepcion/TDashcamStudio/releases"><img src="https://img.shields.io/github/downloads/rodolfoconcepcion/TDashcamStudio/total?style=flat-square&color=green" alt="Downloads"></a>
+  <a href="https://github.com/rodolfoconcepcion/TDashcamStudio/blob/main/LICENSE"><img src="https://img.shields.io/github/license/rodolfoconcepcion/TDashcamStudio?style=flat-square" alt="License"></a>
+  <a href="https://github.com/rodolfoconcepcion/TDashcamStudio/stargazers"><img src="https://img.shields.io/github/stars/rodolfoconcepcion/TDashcamStudio?style=flat-square" alt="Stars"></a>
+  <a href="https://github.com/rodolfoconcepcion/TDashcamStudio/actions/workflows/build.yml"><img src="https://img.shields.io/github/actions/workflow/status/rodolfoconcepcion/TDashcamStudio/build.yml?style=flat-square&label=CI" alt="CI"></a>
 </p>
 
 专为特斯拉行车记录仪（Tesla Dashcam）打造的现代化多路视频播放与剪辑工具。支持 6 视角（前置、后置、左侧、右侧、左 B 柱、右 B 柱）完美同步播放，现已全面支持**桌面客户端**与**本地 Web / Docker 部署**！
@@ -80,7 +80,7 @@
 
 ### 🖥️ 桌面客户端（推荐）
 
-前往 [Releases 发布页面](https://github.com/rodolfoconcepcion/TeslaCamStudio/releases) 下载适配您操作系统的桌面安装包：
+前往 [Releases 发布页面](https://github.com/rodolfoconcepcion/TDashcamStudio/releases) 下载适配您操作系统的桌面安装包：
 
 | 平台 | 安装包格式 |
 |---|---|
