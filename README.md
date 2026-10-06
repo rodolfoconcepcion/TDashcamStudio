@@ -113,16 +113,6 @@ Download the desktop application for your platform from the [Releases](https://g
 
 ---
 
-### 🌐 Online Version (Quickest Way)
-
-You can directly use the online version without any installation:
-
-**👉 [https://teslacam.dpc.cool/](https://teslacam.dpc.cool/)**
-
-Simply visit the website and select your TeslaCam folder to start using it right away. All processing is done locally in your browser, ensuring your privacy.
-
----
-
 ### 💻 Local Deployment
 
 Because of web browser security policies, you need to run this application from a local web server.
