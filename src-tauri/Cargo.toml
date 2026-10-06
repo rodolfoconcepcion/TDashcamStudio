@@ -1,7 +1,7 @@
 [package]
 name = "tdashcam-studio"
 version = "1.0.0"
-description = "TDashcam Studio - Multi-camera dashcam player"
+description = "TeslaCam Studio - Multi-camera dashcam player"
 authors = [""]
 edition = "2021"
 

@@ -1,25 +1,25 @@
 <p align="center">
-  <img src="src/logo-small.png" alt="TDashcam Studio Logo" width="80" height="80">
+  <img src="src/logo-small.png" alt="TeslaCam Studio Logo" width="80" height="80">
 </p>
-<h1 align="center">TDashcam Studio</h1>
+<h1 align="center">TeslaCam Studio</h1>
 
-<p align="center">English | <a href="README_ES.md">Español</a></p>
+<p align="center">English | <a href="README_ES.md">Español</a> | <a href="README_ZH.md">简体中文</a></p>
 
 <p align="center">
-  <a href="https://github.com/rodolfoconcepcion/TDashcamStudio/releases"><img src="https://img.shields.io/github/v/release/rodolfoconcepcion/TDashcamStudio?style=flat-square&color=blue" alt="Release"></a>
-  <a href="https://github.com/rodolfoconcepcion/TDashcamStudio/releases"><img src="https://img.shields.io/github/downloads/rodolfoconcepcion/TDashcamStudio/total?style=flat-square&color=green" alt="Downloads"></a>
-  <a href="https://github.com/rodolfoconcepcion/TDashcamStudio/blob/main/LICENSE"><img src="https://img.shields.io/github/license/rodolfoconcepcion/TDashcamStudio?style=flat-square" alt="License"></a>
-  <a href="https://github.com/rodolfoconcepcion/TDashcamStudio/stargazers"><img src="https://img.shields.io/github/stars/rodolfoconcepcion/TDashcamStudio?style=flat-square" alt="Stars"></a>
-  <a href="https://github.com/rodolfoconcepcion/TDashcamStudio/actions/workflows/build.yml"><img src="https://img.shields.io/github/actions/workflow/status/rodolfoconcepcion/TDashcamStudio/build.yml?style=flat-square&label=CI" alt="CI"></a>
+  <a href="https://github.com/rodolfoconcepcion/TeslaCamStudio/releases"><img src="https://img.shields.io/github/v/release/rodolfoconcepcion/TeslaCamStudio?style=flat-square&color=blue" alt="Release"></a>
+  <a href="https://github.com/rodolfoconcepcion/TeslaCamStudio/releases"><img src="https://img.shields.io/github/downloads/rodolfoconcepcion/TeslaCamStudio/total?style=flat-square&color=green" alt="Downloads"></a>
+  <a href="https://github.com/rodolfoconcepcion/TeslaCamStudio/blob/main/LICENSE"><img src="https://img.shields.io/github/license/rodolfoconcepcion/TeslaCamStudio?style=flat-square" alt="License"></a>
+  <a href="https://github.com/rodolfoconcepcion/TeslaCamStudio/stargazers"><img src="https://img.shields.io/github/stars/rodolfoconcepcion/TeslaCamStudio?style=flat-square" alt="Stars"></a>
+  <a href="https://github.com/rodolfoconcepcion/TeslaCamStudio/actions/workflows/build.yml"><img src="https://img.shields.io/github/actions/workflow/status/rodolfoconcepcion/TeslaCamStudio/build.yml?style=flat-square&label=CI" alt="CI"></a>
 </p>
 
 A modern, browser-based viewer for your Tesla dashcam footage. Play all six camera angles (Front, Back, Left, Right, Left B-Pillar, Right B-Pillar) simultaneously with a sleek and intuitive interface. Now available as a **desktop application**!
 
-## 🆚 Why choose TDashcam Studio?
+## 🆚 Why choose TeslaCam Studio?
 
 Compared to the original Tesla Dashcam player, this project provides more powerful features and a superior experience:
 
-| Feature | Tesla In-Car Player | Raw PC Playback | TDashcam Studio (This Project) |
+| Feature | Tesla In-Car Player | Raw PC Playback | TeslaCam Studio (This Project) |
 | :--- | :--- | :--- | :--- |
 | **Sync Playback** | ✅ Supports 6 channels | ❌ Manual file opening, no sync | ✅ **Perfect 6-channel sync, intuitive layout** |
 | **Viewing Exp.** | Limited to car screen | Large screen, but messy file folders | **Multi-device**, large screen, organized events |
@@ -87,7 +87,7 @@ Compared to the original Tesla Dashcam player, this project provides more powerf
 
 ### 🖥️ Desktop Application (Recommended)
 
-Download the desktop application for your platform from the [Releases](https://github.com/rodolfoconcepcion/TDashcamStudio/releases) page:
+Download the desktop application for your platform from the [Releases](https://github.com/rodolfoconcepcion/TeslaCamStudio/releases) page:
 
 | Platform | Download |
 |----------|----------|
@@ -99,7 +99,7 @@ Download the desktop application for your platform from the [Releases](https://g
 > **Note for macOS Users:**
 > If you encounter the "App is damaged and can't be opened" error, this is due to Apple's security quarantine. Please run the following command in Terminal to fix it:
 > ```bash
-> sudo xattr -rd com.apple.quarantine /Applications/TDashcam\ Studio.app
+> sudo xattr -rd com.apple.quarantine /Applications/TeslaCam\ Studio.app
 > ```
 > *(Adjust the path if your app is not in the /Applications folder)*
 

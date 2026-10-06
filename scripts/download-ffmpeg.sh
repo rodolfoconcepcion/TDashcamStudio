@@ -1,5 +1,5 @@
 #!/bin/bash
-# FFmpeg Download Script for TDashcam Studio
+# FFmpeg Download Script for TeslaCam Studio
 # Downloads FFmpeg binaries for Windows, macOS, and Linux
 
 set -e

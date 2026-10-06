@@ -1,25 +1,25 @@
 <p align="center">
-  <img src="src/logo-small.png" alt="TDashcam Studio Logo" width="80" height="80">
+  <img src="src/logo-small.png" alt="TeslaCam Studio Logo" width="80" height="80">
 </p>
-<h1 align="center">TDashcam Studio</h1>
+<h1 align="center">TeslaCam Studio</h1>
 
-<p align="center"><a href="README.md">English</a> | Español</p>
+<p align="center"><a href="README.md">English</a> | Español | <a href="README_ZH.md">简体中文</a></p>
 
 <p align="center">
-  <a href="https://github.com/rodolfoconcepcion/TDashcamStudio/releases"><img src="https://img.shields.io/github/v/release/rodolfoconcepcion/TDashcamStudio?style=flat-square&color=blue" alt="Release"></a>
-  <a href="https://github.com/rodolfoconcepcion/TDashcamStudio/releases"><img src="https://img.shields.io/github/downloads/rodolfoconcepcion/TDashcamStudio/total?style=flat-square&color=green" alt="Downloads"></a>
-  <a href="https://github.com/rodolfoconcepcion/TDashcamStudio/blob/main/LICENSE"><img src="https://img.shields.io/github/license/rodolfoconcepcion/TDashcamStudio?style=flat-square" alt="License"></a>
-  <a href="https://github.com/rodolfoconcepcion/TDashcamStudio/stargazers"><img src="https://img.shields.io/github/stars/rodolfoconcepcion/TDashcamStudio?style=flat-square" alt="Stars"></a>
-  <a href="https://github.com/rodolfoconcepcion/TDashcamStudio/actions/workflows/build.yml"><img src="https://img.shields.io/github/actions/workflow/status/rodolfoconcepcion/TDashcamStudio/build.yml?style=flat-square&label=CI" alt="CI"></a>
+  <a href="https://github.com/rodolfoconcepcion/TeslaCamStudio/releases"><img src="https://img.shields.io/github/v/release/rodolfoconcepcion/TeslaCamStudio?style=flat-square&color=blue" alt="Release"></a>
+  <a href="https://github.com/rodolfoconcepcion/TeslaCamStudio/releases"><img src="https://img.shields.io/github/downloads/rodolfoconcepcion/TeslaCamStudio/total?style=flat-square&color=green" alt="Downloads"></a>
+  <a href="https://github.com/rodolfoconcepcion/TeslaCamStudio/blob/main/LICENSE"><img src="https://img.shields.io/github/license/rodolfoconcepcion/TeslaCamStudio?style=flat-square" alt="License"></a>
+  <a href="https://github.com/rodolfoconcepcion/TeslaCamStudio/stargazers"><img src="https://img.shields.io/github/stars/rodolfoconcepcion/TeslaCamStudio?style=flat-square" alt="Stars"></a>
+  <a href="https://github.com/rodolfoconcepcion/TeslaCamStudio/actions/workflows/build.yml"><img src="https://img.shields.io/github/actions/workflow/status/rodolfoconcepcion/TeslaCamStudio/build.yml?style=flat-square&label=CI" alt="CI"></a>
 </p>
 
 Un moderno reproductor para los videos de tu cámara Tesla (Dashcam). Reproduce de forma simultánea y sincronizada los seis ángulos de cámara (Frontal, Trasero, Izquierdo, Derecho, Pilares B) con una interfaz intuitiva. ¡Ahora disponible como **aplicación de escritorio**!
 
-## 🆚 ¿Por qué elegir TDashcam Studio?
+## 🆚 ¿Por qué elegir TeslaCam Studio?
 
 A diferencia del reproductor nativo en el vehículo o reproductores de video simples, este proyecto ofrece características superiores y una experiencia más potente:
 
-| Característica | Reproductor en el Vehículo | Reproductor Nativo en PC | TDashcam Studio (Este Proyecto) |
+| Característica | Reproductor en el Vehículo | Reproductor Nativo en PC | TeslaCam Studio (Este Proyecto) |
 | :--- | :--- | :--- | :--- |
 | **Reproducción Sincronizada** | ✅ 6 cámaras soportadas | ❌ Apertura manual, no sincroniza | ✅ **Sincronización perfecta de 6 canales, diseño intuitivo** |
 | **Visualización** | Limitada a la pantalla del auto | Pantalla grande, carpetas desorganizadas | **Multi-dispositivo**, pantalla grande, eventos organizados |
@@ -78,7 +78,7 @@ A diferencia del reproductor nativo en el vehículo o reproductores de video sim
 
 ### 🖥️ Aplicación de Escritorio (Opcional)
 
-Descarga la aplicación respectiva a través de los lanzamientos usando la pagina oficial de Descargas [Releases](https://github.com/rodolfoconcepcion/TDashcamStudio/releases):
+Descarga la aplicación respectiva a través de los lanzamientos usando la pagina oficial de Descargas [Releases](https://github.com/rodolfoconcepcion/TeslaCamStudio/releases):
 
 | Plataforma | Descarga |
 |----------|----------|
@@ -90,7 +90,7 @@ Descarga la aplicación respectiva a través de los lanzamientos usando la pagin
 > **Nota para MacOS:**
 > Debido al sistema rigido de cuarentena, si Apple te arroja un aviso de "Archivo dañado" ejecuta la corrección pertinente en tu consola:
 > ```bash
-> sudo xattr -rd com.apple.quarantine /Applications/TDashcam\ Studio.app
+> sudo xattr -rd com.apple.quarantine /Applications/TeslaCam\ Studio.app
 > ```
 
 ---
