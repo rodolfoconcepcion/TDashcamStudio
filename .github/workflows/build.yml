@@ -120,6 +120,7 @@ jobs:
         run: npm install
 
       - name: Inject Umami Analytics
+        if: ${{ secrets.UMAMI_SCRIPT_URL != '' && secrets.UMAMI_WEBSITE_ID != '' }}
         env:
           UMAMI_SCRIPT_URL: ${{ secrets.UMAMI_SCRIPT_URL }}
           UMAMI_WEBSITE_ID: ${{ secrets.UMAMI_WEBSITE_ID }}
