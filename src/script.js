@@ -106,7 +106,7 @@
         accelZ: "Accel Z",
         exportMetadata: "Export CSV",
         exportMetadataSuccess: "Metadata exported successfully",
-        exportMetadataNoData: "No metadata available to export"
+        exportMetadataNoData: "No metadata available to export",
         clearDate: "Clear Date",
         toggleMetadata: "Toggle Metadata (Dashboard)",
         legacy: "PIP View",
@@ -193,7 +193,7 @@
         startExport: "Exportar",
         cancel: "Cancelar",
         confirmClipRange: "Confirmar Clip",
-        clipVideo: "Recortar Video"
+        clipVideo: "Recortar Video",
         clearDate: "Limpiar Fecha",
         toggleMetadata: "Alternar Metadatos (Panel)",
         legacy: "Vista PIP",
@@ -7288,7 +7288,7 @@ class TeslaCamViewer {
         this.allFiles = [];
         this.eventGroups = [];
         this.currentEvent = null;
-        this.currentLanguage = 'zh';
+        this.currentLanguage = 'en';
         this.currentMapCoordinates = null;
         this.flatpickrInstance = null;
         this.videoClipProcessor = new VideoClipProcessor();
@@ -8530,7 +8530,7 @@ class TeslaCamViewer {
         const desktopTipHtml = !this.isTauri ? `
             <p class="desktop-tip">
                 ${translations.desktopTip}
-                <a href="https://github.com/DeaglePC/TeslaCamPlayer/releases" target="_blank" class="desktop-link">${translations.desktopDownload}</a>
+                <a href="https://github.com/rodolfoconcepcion/TDashcamStudio/releases" target="_blank" class="desktop-link">${translations.desktopDownload}</a>
             </p>
         ` : '';
         
@@ -8571,7 +8571,12 @@ class TeslaCamViewer {
 
     loadLanguage() {
         const savedLang = localStorage.getItem('language');
-        let lang = navigator.language.startsWith('zh') ? 'zh' : 'en';
+        let lang = 'en';
+        if (navigator.language.startsWith('es')) {
+            lang = 'es';
+        } else if (navigator.language.startsWith('zh')) {
+            lang = 'zh';
+        }
         if (savedLang) {
             lang = savedLang;
         }
