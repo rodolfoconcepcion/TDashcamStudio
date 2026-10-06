@@ -1,72 +1,72 @@
-# FFmpeg 二进制文件下载指南
+# FFmpeg Binaries Download Guide
 
-TeslaCam Player 需要在 `src-tauri/binaries/` 目录下放置各平台的 FFmpeg 二进制文件。
+TeslaCam Player requires FFmpeg binaries for each platform in the `src-tauri/binaries/` directory.
 
-## Tauri 命名规范
+## Tauri Naming Convention
 
-根据 Tauri 的 `externalBin` 配置，二进制文件必须按以下格式命名：
+According to Tauri's `externalBin` configuration, the binaries must be named specifically as follows:
 
-| 平台 | 文件名 |
+| Platform | Filename |
 |------|--------|
 | Windows x64 | `ffmpeg-x86_64-pc-windows-msvc.exe` |
 | Linux x64 | `ffmpeg-x86_64-unknown-linux-gnu` |
 | macOS Intel | `ffmpeg-x86_64-apple-darwin` |
 | macOS Apple Silicon | `ffmpeg-aarch64-apple-darwin` |
 
-## 下载链接
+## Download Links
 
 ### Windows x64
-- **下载地址**: https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip
-- **解压后**: 找到 `bin/ffmpeg.exe`
-- **重命名为**: `ffmpeg-x86_64-pc-windows-msvc.exe`
+- **Download Address**: https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip
+- **After extracting**: Find `bin/ffmpeg.exe`
+- **Rename to**: `ffmpeg-x86_64-pc-windows-msvc.exe`
 
 ### Linux x64
-- **下载地址**: https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz
-- **解压后**: 找到 `bin/ffmpeg`
-- **重命名为**: `ffmpeg-x86_64-unknown-linux-gnu`
-- **注意**: 确保文件有执行权限 (`chmod +x`)
+- **Download Address**: https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz
+- **After extracting**: Find `bin/ffmpeg`
+- **Rename to**: `ffmpeg-x86_64-unknown-linux-gnu`
+- **Note**: Ensure the file has execution permissions (`chmod +x`)
 
 ### macOS (Intel & Apple Silicon)
-- **下载地址**: https://evermeet.cx/ffmpeg/getrelease/zip
-- **解压后**: 找到 `ffmpeg`
-- **复制两份**:
+- **Download Address**: https://evermeet.cx/ffmpeg/getrelease/zip
+- **After extracting**: Find `ffmpeg`
+- **Copy twice as**:
   - `ffmpeg-x86_64-apple-darwin` (Intel)
   - `ffmpeg-aarch64-apple-darwin` (Apple Silicon)
-- **注意**: evermeet.cx 提供的是通用二进制文件，同时支持 Intel 和 Apple Silicon
+- **Note**: evermeet.cx provides a universal binary that supports both Intel and Apple Silicon.
 
-**备选 macOS 下载**:
+**Alternative macOS download**:
 - https://ffmpeg.org/download.html#build-mac
 
-## 自动下载脚本
+## Auto-download Scripts
 
 ### Windows (PowerShell)
 ```powershell
-cd TeslaCamPlayer
+cd TDashcamStudio
 .\scripts\download-ffmpeg.ps1
 ```
 
 ### macOS / Linux (Bash)
 ```bash
-cd TeslaCamPlayer
+cd TDashcamStudio
 chmod +x scripts/download-ffmpeg.sh
 ./scripts/download-ffmpeg.sh
 ```
 
-### 按平台下载
+### Download by Platform
 ```bash
-# 只下载 Linux
+# Linux only
 ./scripts/download-ffmpeg.sh --linux
 
-# 只下载 macOS
+# macOS only
 ./scripts/download-ffmpeg.sh --macos
 
-# 只下载 Windows
+# Windows only
 ./scripts/download-ffmpeg.sh --windows
 ```
 
-## 验证
+## Validation
 
-下载完成后，`src-tauri/binaries/` 目录应包含：
+Once the download completes, your `src-tauri/binaries/` directory should look like this:
 
 ```
 src-tauri/binaries/
@@ -77,9 +77,9 @@ src-tauri/binaries/
 └── ffmpeg-aarch64-apple-darwin         (~80 MB)
 ```
 
-## 注意事项
+## Notes
 
-1. **文件大小**: FFmpeg 二进制文件较大，建议添加到 `.gitignore`
-2. **CI/CD**: 在 CI/CD 流程中使用脚本自动下载
-3. **版本**: 建议使用最新稳定版本的 FFmpeg
-4. **许可证**: 使用 GPL 版本以获得完整功能支持
+1. **File Size**: FFmpeg binaries are large, so they are added to `.gitignore`.
+2. **CI/CD**: Use the provided scripts in your CI/CD pipelines to download them automatically.
+3. **Version**: We recommend using the latest stable version of FFmpeg.
+4. **License**: Use the GPL version to obtain full feature support.
